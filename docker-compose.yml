@@ -1,0 +1,12 @@
+services:
+  front:
+    build: ./docker/front
+    container_name: AoC2024_front
+    volumes:
+      - ./src/front:/var/www/html/
+    ports:
+      - "80:80"
+    stdin_open: true
+    tty: true
+    env_file:
+      - docker/front/front.env
